@@ -48,6 +48,8 @@
 	<ItemGroup>
 	  <None Remove="Resources\Fonts\Cairo-ExtraLight.ttf" />
 	  <None Remove="Resources\Fonts\Cairo-Light.ttf" />
+	  <None Remove="MauiScientificCalculator.Tests\**" />
+	  <None Remove="MauiScientificCalculator.ViewModels\**" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -59,10 +61,36 @@
 	  <MauiXaml Update="Views\CalculatorPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Remove="MauiScientificCalculator.Tests\**" />
+	  <MauiXaml Remove="MauiScientificCalculator.ViewModels\**" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <Folder Include="Resources\Styles\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Remove="MauiScientificCalculator.Tests\**" />
+	  <Compile Remove="MauiScientificCalculator.ViewModels\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Remove="MauiScientificCalculator.Tests\**" />
+	  <EmbeddedResource Remove="MauiScientificCalculator.ViewModels\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiCss Remove="MauiScientificCalculator.Tests\**" />
+	  <MauiCss Remove="MauiScientificCalculator.ViewModels\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <AndroidAarLibrary Remove="MauiScientificCalculator.Tests\**" />
+	  <AndroidAarLibrary Remove="MauiScientificCalculator.ViewModels\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\MauiScientificCalculator.ViewModels\MauiScientificCalculator.ViewModels.csproj" />
 	</ItemGroup>
 
 </Project>

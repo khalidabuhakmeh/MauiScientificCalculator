@@ -1,7 +1,11 @@
-﻿namespace MauiScientificCalculator.ViewModels;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using NCalc;
+
+namespace MauiScientificCalculator.ViewModels;
 
 [INotifyPropertyChanged]
-internal partial class CalculatorPageViewModel
+public partial class CalculatorPageViewModel
 {
     [ObservableProperty]
     private string inputText = "";
@@ -10,10 +14,6 @@ internal partial class CalculatorPageViewModel
     private string calculatedResult = "0";
 
     private bool isSciOpWaiting = false;
-
-    public CalculatorPageViewModel()
-    {
-    }
 
     [RelayCommand]
     private void Reset()
@@ -41,9 +41,9 @@ internal partial class CalculatorPageViewModel
             var expression = new Expression(inputString);
             var result = expression.Evaluate();
 
-            CalculatedResult = result.ToString();
+            CalculatedResult = result.ToString()!;
         }
-        catch (Exception ex)
+        catch (Exception)
         {
             CalculatedResult = "NaN";
         }
